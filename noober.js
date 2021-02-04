@@ -8,8 +8,10 @@ async function pageLoaded() {
   let rides = json
   
   // 🔥 start here: write code to loop through the rides
+
+
   
-for (let i=0; i < rides.length; i++) {
+for (let i=0; i < json.length; i++) {
 let ride = rides [i]
 let levelOfServce
 
@@ -21,14 +23,14 @@ if (ride.length > 1) {
   levelOfServce = 'NooberX XL'
 } else {levelOfServce = 'Noober X'}
 
-let ridesHTMLElement = document.querySelector('.rides')
-
-ridesHTMLElement.insertAdjacentHTML('beforeend', `
+function renderLevelOfService (levelofService) {
+  outputElement.insertAdjacentHTML ('beforeend', `
 <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
       <span>${levelOfServce}</span>
-    </h1>`)
-
+    </h1>
+    `)
+}
 
 for (let r=0; r < ride.length; r++){
 let leg = ride[r]
