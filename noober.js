@@ -74,9 +74,7 @@ async function pageLoaded() {
   </div>
   `)
   }
-
-//loop through legs
-
+//loopy loopy loop
   let outputElement = document.querySelector('.rides')
 
   for (let i = 0; i < json.length; i++) {
