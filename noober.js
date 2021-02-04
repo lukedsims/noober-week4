@@ -4,8 +4,6 @@ async function pageLoaded() {
 
   // writes the returned JSON to the console
   console.dir(json)
-
-  let rides = json
   
   // 🔥 start here: write code to loop through the rides
 
@@ -13,15 +11,32 @@ let outputElement = document.querySelector('.rides')
   
 for (let i=0; i < json.length; i++) {
 let ride = rides [i]
-let levelOfServce
+console.log('ride: ', ride)
 
 if (ride.length > 1) {
   levelOfServce = 'Noober Pool'
-} else if (ride[0].purpleRequested == true) {
-  levelOfServce = 'Noober Purple' 
-} else if (ride [0].numberOfPassengers > 3) {
-  levelOfServce = 'NooberX XL'
-} else {levelOfServce = 'Noober X'}
+  renderLevelOfService(levelofService)
+  for (j=0; j(ride.length; j++) {
+    renderRide(ride[j])
+  }
+} 
+else if (ride.length = 1){
+  if (ride[0].purpleRequested){
+    levelofService = 'Noober Purple'
+    renderLevelOfService(levelofService)
+    renderPurple(ride[0])
+  } 
+  
+  else if (ride[0].numberOfPassengers > 3) {
+    levelofService = 'Noober XL'
+    renderLevelOfService(levelofService)
+    renderRide(ride[0])
+  } 
+  
+  else { levelofService = 'Noober X'
+    renderLevelOfService(levelofService)
+    renderRide(ride[0])
+  }
 
 function renderLevelOfService (levelofService) {
   outputElement.insertAdjacentHTML ('beforeend', `
@@ -97,8 +112,8 @@ function renderPurple (ride) {
 }
 console.log(levelOfServce)
 
+    }
+  }
 }
-}
-
 window.addEventListener('DOMContentLoaded', pageLoaded)
 
