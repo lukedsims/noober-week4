@@ -9,7 +9,7 @@ async function pageLoaded() {
   
   // 🔥 start here: write code to loop through the rides
 
-
+let outputElement = document.querySelector('.rides')
   
 for (let i=0; i < json.length; i++) {
 let ride = rides [i]
@@ -36,8 +36,8 @@ for (let r=0; r < ride.length; r++){
 let leg = ride[r]
 console.log(leg)
 
-if (levelOfService == 'Noober X') {
-  rides.ridesHTMLElement.insertAdjacentHTML ('beforeend', `
+function rederRide (ride) {
+  outputElement.ridesHTMLElement.insertAdjacentHTML ('beforeend', `
   <div class="border-4 border-gray-900 p-4 my-4 text-left">
   <div class="flex">
     <div class="w-1/2">
@@ -65,66 +65,8 @@ if (levelOfService == 'Noober X') {
 </div>` )
 }
 
-if (levelOfServce == 'Noober Pool'){
-  ridesHTMLElement.insertAdjacentHTML('beforeend', `
-  <div class="border-4 border-gray-900 p-4 my-4 text-left">
-  <div class="flex">
-    <div class="w-1/2">
-      <h2 class="text-2xl py-1">${leg.passengerDetails.first} ${leg.passengerDetails.last}</h2>
-      <p class="font-bold text-gray-600">${leg.passengerDetails.phoneNumber}</p>
-    </div>
-    <div class="w-1/2 text-right">
-      <span class="rounded-xl bg-gray-600 text-white p-2">
-       ${leg.numberOfPassengers} passengers
-      </span>
-    </div>
-  </div>
-  <div class="mt-4 flex">
-    <div class="w-1/2">
-      <div class="text-sm font-bold text-gray-600">PICKUP</div>
-      <p>${leg.pickupLocation.address}</p>
-      <p>${leg.pickupLocation.city} ${leg.pickupLocation.state} ${leg.pickupLocation.zip}</p>
-    </div>
-    <div class="w-1/2">
-      <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-      <p>${leg.dropoffLocation.address}</p>
-      <p>${leg.dropoffLocation.city} ${leg.dropoffLocation.state} ${leg.dropoffLocation.zip}</p>
-    </div>
-  </div>
-</div>` )
-}
-
-if (levelOfServce == 'Noober XL') {
-  ridesHTMLElement.insertAdjacentHTML('beforeend', `
-  <div class="border-4 border-gray-900 p-4 my-4 text-left">
-  <div class="flex">
-    <div class="w-1/2">
-      <h2 class="text-2xl py-1">${leg.passengerDetails.first} ${leg.passengerDetails.last}</h2>
-      <p class="font-bold text-gray-600">${leg.passengerDetails.phoneNumber}</p>
-    </div>
-    <div class="w-1/2 text-right">
-      <span class="rounded-xl bg-gray-600 text-white p-2">
-       ${leg.numberOfPassengers} passengers
-      </span>
-    </div>
-  </div>
-  <div class="mt-4 flex">
-    <div class="w-1/2">
-      <div class="text-sm font-bold text-gray-600">PICKUP</div>
-      <p>${leg.pickupLocation.address}</p>
-      <p>${leg.pickupLocation.city} ${leg.pickupLocation.state} ${leg.pickupLocation.zip}</p>
-    </div>
-    <div class="w-1/2">
-      <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-      <p>${leg.dropoffLocation.address}</p>
-      <p>${leg.dropoffLocation.city} ${leg.dropoffLocation.state} ${leg.dropoffLocation.zip}</p>
-    </div>
-  </div>
-</div>` )
-}
-
-if (levelOfServce == 'Noober Purple') {
-  ridesHTMLElement.insertAdjacentHTML('beforeend', `
+function renderPurple (ride) {
+  outputElement.insertAdjacentHTML('beforeend', `
   <div class="border-4 border-gray-900 p-4 my-4 text-left">
   <div class="flex">
     <div class="w-1/2">
