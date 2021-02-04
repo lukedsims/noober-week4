@@ -179,10 +179,8 @@ f (levelOfServce == 'Noober Purple') {
   `)
 }
 
-
-
 }
-
+console.log(levelOfServce)
 
 }
 }
